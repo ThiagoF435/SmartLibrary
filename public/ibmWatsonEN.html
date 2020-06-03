@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta name="viewpor" content="width=device-width,initial-scale=1.0">
+    <title>ChatBot - IBM Watson Assistant</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/ibmWatsonEN.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="img/phpThumb_generated_thumbnailico" />
+    <link rel="stylesheet" href="css/chatbot.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+</head>
+
+<body>
+    <header class="only-color">
+        <!-- sticky menu -->
+        <div class="sticky-wrapper">
+            <div class="sticky-menu">
+                <div class="grid-row clear-fix">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">
+                        <img src="img/Smart_LogoII.png" data-at2x="img/Smart_Logo.png" alt>
+                        <h1>Smart Library</h1>
+                    </a>
+                    <!-- / logo -->
+                    <nav class="main-nav">
+                        <ul class="clear-fix">
+                            <li>
+                                <a href="index.html" class="active">Home</a>
+                            </li>
+                            <li class="megamenu">
+                                <a href="https://pucsmartlibrary.azurewebsites.net/ibmWatson.html">Chat</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sticky menu -->
+    </header>
+    <div class="parallaxed">
+        <div class="parallax-image" data-parallax-left="0.5" data-parallax-top="0.3" data-parallax-scroll-speed="0.5">
+            <img src="img/parallax.png" alt="">
+        </div>
+        <div class="grid-row clear-fix" style="text-align: center">
+            <h1 style="color: white">Talk to the Library</h1>
+        </div>
+        <div class="them-mask bg-color-1"></div>
+        <div class="grid-row">
+            <div class="grid-col-row clear-fix">
+                <div id='chatborder'>
+                    <div class="scroll">
+                        <div id="chat"></div>
+                        <p id="chatlog7" class="chatlog">&nbsp;</p>
+                        <p id="chatlog6" class="chatlog">&nbsp;</p>
+                        <p id="chatlog5" class="chatlog">&nbsp;</p>
+                        <p id="chatlog4" class="chatlog">&nbsp;</p>
+                        <p id="chatlog3" class="chatlog">&nbsp;</p>
+                        <p id="chatlog2" class="chatlog">&nbsp;</p>
+                    </div>
+                    <form name="chatForm" method="post">
+                        <div class="form-row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <textarea id="textMessage" name="textMessage" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="form-group">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="form-group">
+                                    <input type="button" class="btn-enviar" onclick="sendMessageToAssistantEN();" value="Send" />
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <div class="form-group">
+                            
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="grid-row ">
+            <div class="grid-col-row clear-fix ">
+                <section class="grid-col grid-col-4 footer-about ">
+                    <h2 class="corner-radius ">About US</h2>
+                    <address>
+						<p></p>
+						<a href="tel:123-123456789 " class="phone-number ">123-123456789</a>
+						<br />
+						<a href="mailto:contato@sl.com " class="email ">contato@sl.com</a>
+						<br />
+						<a href="www.smartlibrary.com " class="site ">www.smartlibrary.com</a>
+						<br />
+						<a href="www.smartlibrary.com " class="address ">250 Biscayne Blvd. (North) 11st Floor<br/>New World Tower Miami, 33148</a>
+					</address>
+                </section>
+            </div>
+        </div>
+        <div class="footer-bottom ">
+            <div class="grid-row clear-fix ">
+                <div class="copyright ">Smart Library<span></span> 2020 . All Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

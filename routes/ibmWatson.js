@@ -84,3 +84,56 @@ router.post('/speechToText', upload.single('audioFile'), function(req, res, next
 });
 
 module.exports = router;
+
+//--------------------------------------------------------------------
+//post para o serviço : IBM Watson Language Translator para Português
+//--------------------------------------------------------------------
+router.post('/translator', function (req, res, next){
+	const translateParams = {
+        text: req.body.text,
+        modelId: 'en-pt'
+        //source: 'English',
+        //target: 'Portuguese'
+      };
+	
+	console.log(translateParams);
+
+	ibmWatson.languageTranslator.translate(translateParams)
+	  .then(translationResult => {
+		console.log(JSON.stringify(translationResult, null, 2));
+		//console.log(JSON.stringify(results,null,2));
+		res.json({status: 'OK', data: translationResult});	
+		//console.log(res.headers);
+	  })
+	  .catch(err => {
+		res.json({ status: 'ERRO', data: err.code + ' - ' + err.toString() }),
+		console.log('error:', err);
+	  });
+	
+});
+
+
+//------------------------------------------------------------------
+//post para o serviço : IBM Watson Language Translator para Inglês
+//------------------------------------------------------------------
+router.post('/translatorB', function (req, res, next){
+ 	const translateParams = {
+         text: req.body.text,
+         modelId: 'pt-en'
+         //source: 'Portuguese',
+         //target: 'English',
+       };
+ 	console.log(translateParams);
+    
+	ibmWatson.languageTranslator.translate(translateParams)
+	  .then(translationResult => {
+		console.log(JSON.stringify(translationResult, null, 2));
+		//console.log(JSON.stringify(results,null,2));
+		res.json({status: 'OK', data: translationResult});	
+		//console.log(res.headers);
+	  })
+	  .catch(err => {
+		res.json({ status: 'ERRO', data: err.code + ' - ' + err.toString() }),
+		console.log('error:', err);
+	  });
+});
